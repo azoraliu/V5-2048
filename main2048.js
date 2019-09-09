@@ -180,14 +180,19 @@ document.addEventListener('touchend',function(event){
     if(Math.abs(deltax)<0.3*documentWidth && Math.abs(deltay)<0.3*documentWidth){
         return;
     }
+	var containerY = $('#container').offset().top;
+    if(containerY>=starty)
+        return true;
     if(Math.abs(deltax)>=Math.abs(deltay)){//x
         if(deltax>0){
             if(moveRight()){
+				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
         }else{
             if(moveLeft()){
+				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
@@ -195,11 +200,13 @@ document.addEventListener('touchend',function(event){
     }else{//y
         if(deltay>0){
             if(moveDown()){
+				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
         }else{
             if(moveUp()){
+				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
@@ -281,7 +288,6 @@ function moveRight(){
     return true;
 }
 function moveUp(){
-	event.preventDefault();
     if(!canMoveUp(board)){
         return false;
     }
@@ -313,7 +319,6 @@ function moveUp(){
     return true;
 }
 function moveDown(){
-	event.preventDefault();
     if(!canMoveDown(board)){
         return false;
     }
