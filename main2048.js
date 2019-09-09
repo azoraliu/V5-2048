@@ -127,31 +127,28 @@ function generateOneName(){
 
 //按键操作
 $(document).keydown(function(event){
-    
+    event.preventDefault();
     switch(event.keyCode){
         case 37://left
-            event.preventDefault();
+            
             if(moveLeft()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
             break;
         case 38://up
-            event.preventDefault();
             if(moveUp()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
             break;
         case 39://right
-            event.preventDefault();
             if(moveRight()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
             break;
         case 40://down
-            event.preventDefault();
             if(moveDown()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
@@ -186,13 +183,11 @@ document.addEventListener('touchend',function(event){
     if(Math.abs(deltax)>=Math.abs(deltay)){//x
         if(deltax>0){
             if(moveRight()){
-				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
         }else{
             if(moveLeft()){
-				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
@@ -200,13 +195,11 @@ document.addEventListener('touchend',function(event){
     }else{//y
         if(deltay>0){
             if(moveDown()){
-				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
         }else{
             if(moveUp()){
-				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }

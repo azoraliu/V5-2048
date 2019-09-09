@@ -206,6 +206,7 @@ document.addEventListener('touchend',function(event){
             }
         }else{
             if(moveUp()){
+				event.preventDefault();
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
