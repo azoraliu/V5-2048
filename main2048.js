@@ -167,9 +167,10 @@ document.addEventListener('touchstart',function(event){
     starty=event.touches[0].pageY;
 });
 //避免bug
+/*
 document.addEventListener('touchmove',function(event){
     event.preventDefault();
-});
+});*/
 document.addEventListener('touchend',function(event){
     endx=event.changedTouches[0].pageX;
     endy=event.changedTouches[0].pageY;
