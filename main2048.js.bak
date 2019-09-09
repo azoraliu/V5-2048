@@ -281,7 +281,6 @@ function moveRight(){
     return true;
 }
 function moveUp(){
-	event.preventDefault();
     if(!canMoveUp(board)){
         return false;
     }
@@ -313,7 +312,6 @@ function moveUp(){
     return true;
 }
 function moveDown(){
-	event.preventDefault();
     if(!canMoveDown(board)){
         return false;
     }
