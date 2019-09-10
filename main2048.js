@@ -178,6 +178,7 @@ $("body").bind("touchmove",function(event){event.preventDefault;//code
     e.preventDefault();
 }, { passive: false });*/
 document.addEventListener("touchmove", function() { 
+    if(event._isScroller) return;
 	if(this.flags==1){
 		event.preventDefault();
     }
