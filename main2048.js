@@ -171,9 +171,12 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchmove',function(event){
     event.preventDefault();
 });*/
+/*
 document.addEventListener('touchmove', function (e) { 
     e.preventDefault(); 
-}, false);
+}, false);*/
+$("body").bind("touchmove",function(event){event.preventDefault;//code
+});
 document.addEventListener('touchend',function(event){
     endx=event.changedTouches[0].pageX;
     endy=event.changedTouches[0].pageY;
