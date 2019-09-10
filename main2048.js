@@ -127,28 +127,31 @@ function generateOneName(){
 
 //按键操作
 $(document).keydown(function(event){
-    event.preventDefault();
+    
     switch(event.keyCode){
         case 37://left
-            
+            event.preventDefault();
             if(moveLeft()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
             break;
         case 38://up
+            event.preventDefault();
             if(moveUp()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
             break;
         case 39://right
+            event.preventDefault();
             if(moveRight()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
             }
             break;
         case 40://down
+            event.preventDefault();
             if(moveDown()){
                 setTimeout("generateOneName()",210);
                 setTimeout("isgameover()",300);
@@ -168,9 +171,9 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchmove',function(event){
     event.preventDefault();
 });*/
-document.addEventListener('touchmove',function(event){
-	event.preventDefault();
-});
+document.addEventListener('touchmove', function (e) { 
+    e.preventDefault(); 
+}, false);
 document.addEventListener('touchend',function(event){
     endx=event.changedTouches[0].pageX;
     endy=event.changedTouches[0].pageY;
@@ -180,9 +183,6 @@ document.addEventListener('touchend',function(event){
     if(Math.abs(deltax)<0.3*documentWidth && Math.abs(deltay)<0.3*documentWidth){
         return;
     }
-	var containerY = $('#container').offset().top;
-    if(containerY>=starty)
-        return true;
     if(Math.abs(deltax)>=Math.abs(deltay)){//x
         if(deltax>0){
             if(moveRight()){
