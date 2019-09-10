@@ -174,57 +174,9 @@ document.addEventListener('touchmove',function(event){
 $("body").bind("touchmove",function(event){event.preventDefault;//code
 });*/
 /******************************************/
-function KeyboardInputManager() {
-    this.events = {};
-    window.navigator.msPointerEnabled ? (this.eventTouchstart = "MSPointerDown", this.eventTouchmove = "MSPointerMove", this.eventTouchend = "MSPointerUp") : (this.eventTouchstart = "touchstart", this.eventTouchmove = "touchmove", this.eventTouchend = "touchend");
-    this.listen()
-}
-KeyboardInputManager.prototype.listen = function () {
-    var a = this,
-        b = {
-            38: 0,
-            39: 1,
-            40: 2,
-            37: 3,
-            75: 0,
-            76: 1,
-            74: 2,
-            72: 3,
-            87: 0,
-            68: 1,
-            83: 2,
-            65: 3
-        };
-    document.addEventListener("keydown", function (c) {
-        var d = c.altKey || c.ctrlKey || c.metaKey || c.shiftKey,
-            e = b[c.which];
-        d || void 0 === e || (c.preventDefault(), a.emit("move", e));
-        d || 82 !== c.which || a.restart.call(a, c)
-    });
-    this.bindButtonPress(".retry-button", this.restart);
-    this.bindButtonPress(".restart-button", this.restart);
-    this.bindButtonPress(".keep-playing-button", this.keepPlaying);
-    var c, d, e =
-        document.getElementsByClassName("game-container")[0];
-    e.addEventListener(this.eventTouchstart, function (a) {
-        !window.navigator.msPointerEnabled && 1 < a.touches.length || 1 < a.targetTouches || (window.navigator.msPointerEnabled ? (c = a.pageX, d = a.pageY) : (c = a.touches[0].clientX, d = a.touches[0].clientY), a.preventDefault())
-    });
-    e.addEventListener(this.eventTouchmove, function (a) {
-        a.preventDefault()
-    });
-    e.addEventListener(this.eventTouchend, function (b) {
-        if (!(!window.navigator.msPointerEnabled && 0 < b.touches.length || 0 < b.targetTouches)) {
-            var e,
-                g;
-            window.navigator.msPointerEnabled ? (e = b.pageX, g = b.pageY) : (e = b.changedTouches[0].clientX, g = b.changedTouches[0].clientY);
-            e -= c;
-            b = Math.abs(e);
-            g -= d;
-            var m = Math.abs(g);
-            10 < Math.max(b, m) && a.emit("move", b > m ? 0 < e ? 1 : 3 : 0 < g ? 2 : 0)
-        }
-    })
-};
+document.body.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+}, { passive: false });
 /*****************************************/
 
 

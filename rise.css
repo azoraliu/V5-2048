@@ -45,6 +45,8 @@ header p{
 
     border-radius: 10px;
     position: relative;
+
+    touch-action: none;  
 }
 .cell{
     width: 100px;
