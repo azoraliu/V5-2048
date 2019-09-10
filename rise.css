@@ -1,5 +1,7 @@
-body{
+#content {
+    height: 100%;
     overflow: hidden;
+    touch-action: none;    
 }
 header{
     display: block;
