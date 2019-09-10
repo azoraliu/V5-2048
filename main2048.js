@@ -228,6 +228,13 @@ function isgameover(){
     if(nospace(board)&&nomove(board)){
         gameover();
     }
+    for(var i = 0; i < 4; i++){
+		for(var j = 0; j < 4; j++){
+			if( board[i][j] == 4096 ){
+				alert("win~炸裂啦~");
+			}
+		}
+	}
 }
 function gameover(){
     alert("gameover!你的分数是："+score);
