@@ -174,9 +174,16 @@ document.addEventListener('touchmove',function(event){
 $("body").bind("touchmove",function(event){event.preventDefault;//code
 });*/
 /******************************************/
-document.body.addEventListener('touchmove', (e) => {
+/*document.body.addEventListener('touchmove', (e) => {
     e.preventDefault();
-}, { passive: false });
+}, { passive: false });*/
+document.addEventListener("touchmove", function() { 
+	if(this.flags===true){
+		event.preventDefault();
+	}else{
+		return true
+	}
+}, {passive: false});
 /*****************************************/
 
 
