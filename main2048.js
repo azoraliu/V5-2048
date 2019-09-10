@@ -178,12 +178,11 @@ $("body").bind("touchmove",function(event){event.preventDefault;//code
     e.preventDefault();
 }, { passive: false });*/
 document.addEventListener("touchmove", function() { 
-	if(this.flags===true){
+	if(this.flags==1){
 		event.preventDefault();
-	}else{
-		return true
-	}
+    }
 }, {passive: false});
+
 /*****************************************/
 
 
