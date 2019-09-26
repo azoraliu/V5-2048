@@ -110,18 +110,18 @@ function noBlockVertical(col,row1,row2,board){
 
 function nameList(number){
     switch(number){
-        case 2:return '南南';break;
-        case 4:return '洛洛';break;
-        case 8:return '嘉嘉';break;
-        case 16:return '光光';break;
-        case 32:return '姚琛';break;
-        case 64:return '小闻';break;
-        case 128:return '齐齐';break;
-        case 256:return '雅雅';break;
-        case 512:return '任豪';break;
-        case 1024:return '磊磊';break;
-        case 2048:return '让让';break;
-        case 4096:return 'R1SE';break;
+        case 2:return '斑马';break;
+        case 4:return '番茄';break;
+        case 8:return '小呱';break;
+        case 16:return '淋着雨';break;
+        case 32:return 'V';break;
+        case 64:return 'O';break;
+        case 128:return 'G';break;
+        case 256:return 'U';break;
+        case 512:return 'E';break;
+        case 1024:return '5';break;
+        case 2048:return 'VOGUE5';break;
+        case 4096:return '威武';break;
     }
     return "you win";
 }
