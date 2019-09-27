@@ -113,7 +113,7 @@ function nameList(number){
         case 2:return '斑马';break;
         case 4:return '番茄';break;
         case 8:return '小呱';break;
-        case 16:return '淋着雨';break;
+        case 16:return '淋雨';break;
         case 32:return 'V';break;
         case 64:return 'O';break;
         case 128:return 'G';break;
